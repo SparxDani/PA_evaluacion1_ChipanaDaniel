@@ -9,20 +9,23 @@ public class Shooting : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Dispara al hacer clic izquierdo
+        if (Input.GetMouseButtonDown(0)) 
         {
             Shoot();
         }
-        else if (Input.GetMouseButtonDown(1)) // Dispara al hacer clic derecho
+        else if (Input.GetMouseButtonDown(1)) 
         {
-            Shoot();
+            for (int i = 0; i < 3; i++)
+            {
+                Shoot();
+            }
         }
     }
 
     private void Shoot()
     {
         Vector3 mousePosition = Input.mousePosition;
-        mousePosition.z = 10f; // La distancia de la cámara al arma
+        mousePosition.z = 10f; 
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
         Vector3 direction = (worldPosition - transform.position).normalized;
@@ -31,6 +34,6 @@ public class Shooting : MonoBehaviour
         Rigidbody2D projectileRigidbody = projectile.GetComponent<Rigidbody2D>();
         projectileRigidbody.AddForce(direction * projectileForce);
 
-        // Reproduce un efecto de sonido y una animación de disparo
+        
     }
 }
