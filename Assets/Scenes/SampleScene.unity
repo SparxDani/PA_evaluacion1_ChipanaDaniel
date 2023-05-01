@@ -2114,6 +2114,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2080829134}
   projectileForce: 500
+  dispersionAngle: 10
+  fireRate: 0.75
+  projectileLifetime: 4
 --- !u!58 &1531166527
 CircleCollider2D:
   m_ObjectHideFlags: 0
